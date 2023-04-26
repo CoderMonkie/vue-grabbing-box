@@ -9,20 +9,20 @@
     "dist/vue3",
     "README**.md"
   ],
-  "main": "./dist/vue3/grabbing-box.umd.js",
+  "main": "./dist/vue3/grabbing-box.umd.cjs",
   "module": "./dist/vue3/grabbing-box.js",
   "exports": {
     ".": {
       "import": "./dist/grabbing-box.js",
-      "require": "./dist/grabbing-box.umd.js"
+      "require": "./dist/grabbing-box.umd.cjs"
     },
     "./vue2": {
       "import": "./dist/vue2/grabbing-box.js",
-      "require": "./dist/vue2/grabbing-box.umd.js"
+      "require": "./dist/vue2/grabbing-box.umd.cjs"
     },
     "./vue3": {
       "import": "./dist/vue3/grabbing-box.js",
-      "require": "./dist/vue3/grabbing-box.umd.js"
+      "require": "./dist/vue3/grabbing-box.umd.cjs"
     }
   },
   "scripts": {

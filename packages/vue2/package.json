@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build"
+    "build": "vite build --emptyOutDir"
   },
   "keywords": [
     "vue-grabbing-box vue2"
