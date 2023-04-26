@@ -1,0 +1,58 @@
+{
+  "name": "vue-grabbing-box",
+  "version": "0.0.1",
+  "private": "false",
+  "description": "vue-grabbing-box is a container component that allows you to grab to change view-box and also with scaling",
+  "type": "module",
+  "files": [
+    "dist/vue2",
+    "dist/vue3",
+    "README**.md"
+  ],
+  "main": "./dist/vue3/grabbing-box.umd.js",
+  "module": "./dist/vue3/grabbing-box.js",
+  "exports": {
+    ".": {
+      "import": "./dist/grabbing-box.js",
+      "require": "./dist/grabbing-box.umd.js"
+    },
+    "./vue2": {
+      "import": "./dist/vue2/grabbing-box.js",
+      "require": "./dist/vue2/grabbing-box.umd.js"
+    },
+    "./vue3": {
+      "import": "./dist/vue3/grabbing-box.js",
+      "require": "./dist/vue3/grabbing-box.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "echo TODO",
+    "build": "pnpm -F @vue-grabbing-box/vue* build",
+    "publish": "pnpm build && npm publish"
+  },
+  "keywords": [
+    "canvas",
+    "svg",
+    "drag",
+    "scale",
+    "zoom",
+    "grab",
+    "touch",
+    "container",
+    "vue",
+    "画布",
+    "画布拖拽",
+    "画布缩放",
+    "多指缩放"
+  ],
+  "author": "maoniaiyou",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CoderMonkie/vue-grabbing-box.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.62.1",
+    "vite": "^4.3.1"
+  }
+}

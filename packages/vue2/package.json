@@ -1,0 +1,27 @@
+{
+  "name": "@vue-grabbing-box/vue2",
+  "version": "0.0.1",
+  "description": "vue-grabbing-box vue2",
+  "main": "index.js",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [
+    "vue-grabbing-box vue2"
+  ],
+  "author": "maonianyou",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "~2.6.14"
+  },
+  "devDependencies": {
+    "element-ui": "^2.15.13",
+    "vite-plugin-libcss": "^1.0.6",
+    "vite-plugin-vue2": "^2.0.3",
+    "vue-template-compiler": "^2.6.14"
+  }
+}

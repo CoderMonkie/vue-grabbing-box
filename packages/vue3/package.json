@@ -1,0 +1,24 @@
+{
+  "name": "@vue-grabbing-box/vue3",
+  "version": "0.0.1",
+  "description": "vue-grabbing-box vue3",
+  "main": "index.js",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build --mode developmennt"
+  },
+  "keywords": [
+    "vue-grabbing-box vue3"
+  ],
+  "author": "maonianyou",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.0"
+  },
+  "dependencies": {
+    "vue": "^3.2.47"
+  }
+}
