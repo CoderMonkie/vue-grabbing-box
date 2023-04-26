@@ -72,6 +72,7 @@ export default {
       type: Number,
       default: 10,
     },
+    // 节流函数的时间间隔
     throttleSpan: {
       type: Number,
       default: 100,
