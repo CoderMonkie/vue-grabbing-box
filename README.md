@@ -19,6 +19,8 @@ This is a container component (Vue component) similar to a canvas box, which dis
   - Scale by 'Ctrl'+'Wheel'
   - You can also zoom-in, zoom-out, and reset by clicking the button
 
+![](docs/images/vue2-demo-captture.gif)
+
 ## Install
 
 ```bash
