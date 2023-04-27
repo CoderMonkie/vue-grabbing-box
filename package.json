@@ -49,6 +49,7 @@
     "type": "git",
     "url": "https://github.com/CoderMonkie/vue-grabbing-box.git"
   },
+  "homepage": "https://github.com/CoderMonkie/vue-grabbing-box.git",
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.62.1",
