@@ -53,13 +53,13 @@ yarn add vue-grabbing-box
 
 ```js
 import Vue from 'vue';
-import GrabbingBox from 'vue-grabbing-box';
+import GrabbingBox from 'vue-grabbing-box/vue2';
 Vue.use(GrabbingBox);
 
 // 组件级安装（局部安装）也是支持的，只是就一个组件而已，又不是组件库，就没必要了
 
 // 如果在其它组件库中使用，可在其 install 函数中进行注册
-import GrabbingBox from 'vue-grabbing-box';
+import GrabbingBox from 'vue-grabbing-box/vue2';
 
 function install(Vue) {
   // ...
