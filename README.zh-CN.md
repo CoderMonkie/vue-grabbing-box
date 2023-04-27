@@ -78,6 +78,12 @@ function install(Vue) {
 </template>
 ```
 
+### Vue@3
+
+TODO
+
+## API
+
 |属性名|类型|默认值|说明|
 |--|--|--|--|
 |maxScale|Number|200|放大最高比例限制，单位百分比|
@@ -85,7 +91,3 @@ function install(Vue) {
 |scaleStep|Number|10|放大缩小的步长，点击按钮时用，单位同上|
 |scaleButtons|Boolean|true|是否显示 scale 按钮组，包括放大（+）缩小（-）和重置|
 |throttleSpan|Number|100|事件节流时间间隔，单位毫秒|
-
-### Vue@3
-
-TODO

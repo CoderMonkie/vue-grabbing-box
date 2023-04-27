@@ -61,6 +61,8 @@ function install(Vue) {
 </template>
 ```
 
+## API
+
 |Property|Type|Default Value|Note|
 |--|--|--|--|
 |maxScale|Number|200|max limitation, unit percent|
