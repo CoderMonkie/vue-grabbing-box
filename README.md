@@ -37,20 +37,18 @@ yarn add vue-grabbing-box
 
 ```js
 import Vue from 'vue';
-import GrabbingBox from 'vue-grabbing-box/vue2';
+import GrabbingBox from 'vue-grabbing-box'; // import as vue2 for default
+// or
+import GrabbingBox from 'vue-grabbing-box/dist/vue2`; // specify vue2
+// recommend, if case of changing default export to vue3
 Vue.use(GrabbingBox);
 
-// or
-// if used in other lib
-import GrabbingBox from 'vue-grabbing-box/vue2';
-
-function install(Vue) {
-  // ...
-  // regist components for the lib it-self
-  // ...
-
-  Vue.use(GrabbingBox)
-}
+// or import component directly
+import GrabbingBox from 'vue-grabbing-box/packages/vue2/src/grabbing-box';
+import 'vue-grabbing-box/dist/vue2/index.css';
+Vue.use(GrabbingBox);
+// 或
+Vue.component(GrabbingBox.name, GrabbingBox);
 ```
 
 ```vue

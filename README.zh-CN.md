@@ -57,7 +57,7 @@ import GrabbingBox from 'vue-grabbing-box'; // 直接引入默认 vue2
 // 注：打包 ESM 时可以通过插件自动引入样式，而 umd 不行，需要再引入样式
 // import 'vue-grabbing-box/dist/vue2/index.css';
 // 或
-import GrabbingBox from 'vue-grabbing-box/dist/vue2`; // 指定 vue2
+import GrabbingBox from 'vue-grabbing-box/dist/vue2`; // 指定 vue2（推荐）
 
 Vue.use(GrabbingBox);
 
