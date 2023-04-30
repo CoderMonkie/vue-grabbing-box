@@ -20,9 +20,13 @@
     "vue": "~2.6.14"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.5",
+    "@babel/preset-env": "^7.21.5",
+    "@rollup/plugin-babel": "^6.0.3",
     "element-ui": "^2.15.13",
     "vite-plugin-libcss": "^1.0.6",
     "vite-plugin-vue2": "^2.0.3",
     "vue-template-compiler": "^2.6.14"
-  }
+  },
+  "browserslist": "defaults,ie 11,chrome 69"
 }

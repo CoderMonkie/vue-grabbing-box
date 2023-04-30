@@ -1,5 +1,20 @@
-import * as all from './src';
+import '../../assets/common.css';
+import { version } from './package.json'
 
-export default all.default;
+import GrabbingBox from './src/grabbing-box/index.js';
 
-export const GrabbingBox = all.GrabbingBox;
+const install = (Vue) => {
+  if (install.installed) return;
+  install.installed = true;
+  Vue.component(GrabbingBox.name, GrabbingBox);
+}
+
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue);
+}
+
+export default {
+  version,
+  install,
+  GrabbingBox,
+}

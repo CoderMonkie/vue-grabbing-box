@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import path from 'path';
 import libCss from 'vite-plugin-libcss';
 import { createVuePlugin } from 'vite-plugin-vue2';
+import { babel } from '@rollup/plugin-babel';
 
 export default defineConfig(({ command, mode }) => {
   const isProd = mode === 'production';
@@ -28,7 +29,7 @@ export default defineConfig(({ command, mode }) => {
       lib: {
         entry: path.resolve(__dirname, 'index.js'),
         name: 'GrabbingBox',
-        fileName: 'grabbing-box',
+        fileName: 'index',
       },
       outDir: '../../dist/vue2',
       cssCodeSplit: true,
@@ -42,8 +43,18 @@ export default defineConfig(({ command, mode }) => {
             vue: 'Vue',
             'element-ui': 'ElementUI',
           }
-        }
-      }
+        },
+        plugins: [
+          babel({
+            babelHelpers: 'bundled',
+            presets: [
+              [
+                "@babel/preset-env",
+              ]
+            ]
+          })
+        ]
+      },
     },
     esbuild: {
       drop: buildDrop,

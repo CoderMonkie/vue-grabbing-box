@@ -37,16 +37,13 @@
 </template>
 
 <script>
-import { throttle, isPC } from "../../utils";
+import { throttle, isPC } from "../../../utils";
 
 /**
  * 画布拖拽扩缩放组件
  */
 export default {
   name: "GrabbingBox",
-  install(Vue){
-    Vue.component(this.name, this)
-  },
   props: {
     useCapture: {
       type: Boolean,

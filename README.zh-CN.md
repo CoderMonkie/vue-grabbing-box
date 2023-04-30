@@ -53,21 +53,20 @@ yarn add vue-grabbing-box
 
 ```js
 import Vue from 'vue';
-import GrabbingBox from 'vue-grabbing-box/vue2';
+import GrabbingBox from 'vue-grabbing-box'; // 直接引入默认 vue2
+// 注：打包 ESM 时可以通过插件自动引入样式，而 umd 不行，需要再引入样式
+// import 'vue-grabbing-box/dist/vue2/index.css';
+// 或
+import GrabbingBox from 'vue-grabbing-box/dist/vue2`; // 指定 vue2
+
 Vue.use(GrabbingBox);
 
 // 组件级安装（局部安装）也是支持的，只是就一个组件而已，又不是组件库，就没必要了
-
-// 如果在其它组件库中使用，可在其 install 函数中进行注册
-import GrabbingBox from 'vue-grabbing-box/vue2';
-
-function install(Vue) {
-  // ...
-  // 其它组件库注册自己的组件
-  // ...
-
-  Vue.use(GrabbingBox)
-}
+// 而且组件单独安装必需要单独引入样式
+import GrabbingBox from 'vue-grabbing-box/packages/vue2/src/grabbing-box';
+Vue.use(GrabbingBox);
+// 或
+Vue.component(GrabbingBox.name, GrabbingBox);
 ```
 
 ```vue
