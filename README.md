@@ -47,7 +47,7 @@ Vue.use(GrabbingBox);
 import GrabbingBox from 'vue-grabbing-box/packages/vue2/src/grabbing-box';
 import 'vue-grabbing-box/dist/vue2/index.css';
 Vue.use(GrabbingBox);
-// 或
+// or
 Vue.component(GrabbingBox.name, GrabbingBox);
 ```
 
@@ -59,6 +59,8 @@ Vue.component(GrabbingBox.name, GrabbingBox);
 </template>
 ```
 
+*Note: used ElButton in scale button-group*
+
 ## API
 
 |Property|Type|Default Value|Note|
@@ -68,5 +70,3 @@ Vue.component(GrabbingBox.name, GrabbingBox);
 |scaleStep|Number|10|unit percent|
 |scaleButtons|Boolean|true|whether show scale button-group，includes `+` `-` and `reset`|
 |throttleSpan|Number|100|unit millisecond|
-
-Note that used ElButton in v0.0.1

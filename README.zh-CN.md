@@ -77,6 +77,8 @@ Vue.component(GrabbingBox.name, GrabbingBox);
 </template>
 ```
 
+*注：scale 按钮组中使用了 ElButton*
+
 ### Vue@3
 
 TODO
