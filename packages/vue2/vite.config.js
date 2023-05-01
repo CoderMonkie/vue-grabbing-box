@@ -26,6 +26,7 @@ export default defineConfig(({ command, mode }) => {
       libCss(),
     ],
     build: {
+      minify: isProd && 'esbuild',
       lib: {
         entry: path.resolve(__dirname, 'index.js'),
         name: 'GrabbingBox',

@@ -39,6 +39,10 @@
 <script>
 import { throttle, isPC } from "../../../utils";
 
+const SCROLL_SPEED_MIN = 1;
+const SCROLL_SPEED_MAX = 6;
+const SCROLL_SPEED_DEFAULT = 3;
+
 /**
  * 画布拖拽扩缩放组件
  */
@@ -73,6 +77,13 @@ export default {
     throttleSpan: {
       type: Number,
       default: 100,
+    },
+    scrollSpeed: {
+      type: Number,
+      default: SCROLL_SPEED_DEFAULT,
+      validator(value) {
+        return SCROLL_SPEED_MIN <= value && value <= SCROLL_SPEED_MAX;
+      }
     }
   },
   mounted() {
@@ -103,6 +114,12 @@ export default {
     scaleLimitBelowMin() {
       return this.scaling <= this.minScale;
     },
+    safeScrollSpeed() {
+      if (isNaN(this.scrollSpeed)) return SCROLL_SPEED_DEFAULT;
+      if (SCROLL_SPEED_MIN > this.scrollSpeed) return SCROLL_SPEED_MIN;
+      if (SCROLL_SPEED_MAX < this.scrollSpeed) return SCROLL_SPEED_MAX;
+      return this.scrollSpeed;
+    }
   },
   data() {
     return {
@@ -276,7 +293,7 @@ export default {
       // 滚动（仅上下）
       else {
         const { translateY } = this.lastTransformData;
-        this.lastTransformData.translateY += wheelDelta;
+        this.lastTransformData.translateY += wheelDelta * this.safeScrollSpeed;
         this.setMatrix(this.$refs.contentBoxRef);
       }
     },
