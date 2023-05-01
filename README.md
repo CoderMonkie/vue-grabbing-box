@@ -70,3 +70,4 @@ Vue.component(GrabbingBox.name, GrabbingBox);
 |scaleStep|Number|10|unit percent|
 |scaleButtons|Boolean|true|whether show scale button-group，includes `+` `-` and `reset`|
 |throttleSpan|Number|100|unit millisecond|
+|scrollSpeed|Number|3|`v0.0.6` mouse scroll speed，value range `1`~`6`|

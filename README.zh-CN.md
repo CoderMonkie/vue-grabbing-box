@@ -92,3 +92,4 @@ TODO
 |scaleStep|Number|10|放大缩小的步长，点击按钮时用，单位同上|
 |scaleButtons|Boolean|true|是否显示 scale 按钮组，包括放大（+）缩小（-）和重置|
 |throttleSpan|Number|100|事件节流时间间隔，单位毫秒|
+|scrollSpeed|Number|3|`v0.0.6` PC端鼠标滚动轮上下滚动倍速，可设范围`1`~`6`|
