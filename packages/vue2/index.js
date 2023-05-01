@@ -1,5 +1,5 @@
 import '../../assets/common.css';
-import { version } from './package.json'
+import { version } from '../../package.json';
 
 import GrabbingBox from './src/grabbing-box/index.js';
 
