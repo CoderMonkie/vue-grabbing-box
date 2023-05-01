@@ -42,5 +42,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "element-ui": "^2.15.13",
+    "vue": "^2.6.14"
   }
 }
