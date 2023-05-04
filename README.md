@@ -40,7 +40,7 @@ import Vue from 'vue';
 import GrabbingBox from 'vue-grabbing-box'; // import as vue2 for default
 // or
 import GrabbingBox from 'vue-grabbing-box/dist/vue2`; // specify vue2
-// recommend, if case of changing default export to vue3
+// recommend, in case of changing default export to vue3
 Vue.use(GrabbingBox);
 
 // or import component directly
