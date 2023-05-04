@@ -6,6 +6,7 @@
     "dist",
     "./packages/utils",
     "./packages/vue2/src",
+    "./docs/images",
     "README**.md"
   ],
   "main": "./dist/vue2/index.js",
