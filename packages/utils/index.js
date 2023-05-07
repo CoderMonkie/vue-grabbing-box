@@ -15,7 +15,7 @@ export function isPC() {
  * @param {Number} timespan 节流时间
  * @returns {Function}
  */
-export function throttle(fn, timespan = 100) {
+export function throttle(fn, timespan = 50) {
   let lastTime = 0;
   return function (...args) {
     if (typeof fn !== 'function') {
