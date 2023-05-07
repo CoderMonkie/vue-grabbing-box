@@ -9,7 +9,8 @@
     "./docs/images",
     "README**.md"
   ],
-  "main": "./dist/vue2/index.js",
+  "main": "./dist/vue2/index.umd.js",
+  "module": "./dist/vue2/index.js",
   "scripts": {
     "dev": "echo TODO",
     "build": "pnpm -F @vue-grabbing-box/vue* build",

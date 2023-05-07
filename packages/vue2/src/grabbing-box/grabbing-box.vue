@@ -7,24 +7,13 @@
       'cursor-grabbing': dragging,
     }"
   >
-    <div v-if="scaleButtons" class="scale-btn-group">
-      <el-button
-        icon="el-icon-plus"
-        size="mini"
-        @click="zoomIn"
-        :disabled="scaleLimitOverMax"
-        circle
-      ></el-button>
-      <span style="margin: 0 8px;">{{ scaling }}%</span>
-      <el-button
-        icon="el-icon-minus"
-        size="mini"
-        @click="zoomOut"
-        :disabled="scaleLimitBelowMin"
-        circle
-      ></el-button>
-      <el-button size="mini" @click="reset">重置</el-button>
-    </div>
+    <scale-button-group
+      v-if="scaleButtons"
+      :scaling="scaling"
+      @zoom-in="zoomIn"
+      @zoom-out="zoomOut"
+      @reset="reset"
+    />
 
     <div
       ref="contentBoxRef"
@@ -38,6 +27,7 @@
 
 <script>
 import { throttle, isPC } from "../../../utils";
+import ScaleButtonGroup from '../scale-button-group/index.vue';
 
 const SCROLL_SPEED_MIN = 1;
 const SCROLL_SPEED_MAX = 6;
@@ -86,6 +76,7 @@ export default {
       }
     }
   },
+  components: { ScaleButtonGroup },
   mounted() {
     this.init();
   },
@@ -107,12 +98,6 @@ export default {
       const { scale } = this.lastTransformData;
       // 要注意：1.1 * 100 = 110.00000000000001
       return parseInt(scale * 100);
-    },
-    scaleLimitOverMax() {
-      return this.scaling >= this.maxScale;
-    },
-    scaleLimitBelowMin() {
-      return this.scaling <= this.minScale;
     },
     safeScrollSpeed() {
       if (isNaN(this.scrollSpeed)) return SCROLL_SPEED_DEFAULT;
@@ -469,13 +454,6 @@ export default {
   .cursor-grabbing,
   .cursor-grabbing * {
     cursor: grabbing;
-  }
-
-  .scale-btn-group {
-    position: absolute;
-    top: 20px;
-    right: 10px;
-    z-index: 999;
   }
 
   .grabbing-box * {

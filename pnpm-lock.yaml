@@ -19,6 +19,7 @@ importers:
     specifiers:
       '@babel/core': ^7.21.5
       '@babel/preset-env': ^7.21.5
+      '@iconify/vue2': ^2.1.0
       '@rollup/plugin-babel': ^6.0.3
       element-ui: ^2.15.13
       vite-plugin-libcss: ^1.0.6
@@ -30,6 +31,7 @@ importers:
     devDependencies:
       '@babel/core': 7.21.5
       '@babel/preset-env': 7.21.5_@babel+core@7.21.5
+      '@iconify/vue2': 2.1.0_vue@2.6.14
       '@rollup/plugin-babel': 6.0.3_@babel+core@7.21.5
       element-ui: 2.15.13_vue@2.6.14
       vite-plugin-libcss: 1.0.6
@@ -1558,6 +1560,19 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@iconify/types/2.0.0:
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
+    dev: true
+
+  /@iconify/vue2/2.1.0_vue@2.6.14:
+    resolution: {integrity: sha512-+R4T9EqrUecMKh/tdiscju/mJS+HCzHFFuJ9XnNcFLaIj3lBOdh8RJolPY9n4k7XRG5V/tY16Lzx+mv+vOmjhA==}
+    peerDependencies:
+      vue: 2.x
+    dependencies:
+      '@iconify/types': 2.0.0
+      vue: 2.6.14
+    dev: true
 
   /@jridgewell/gen-mapping/0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}

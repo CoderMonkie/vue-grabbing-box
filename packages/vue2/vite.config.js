@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import path from 'path';
-import libCss from 'vite-plugin-libcss';
 import { createVuePlugin } from 'vite-plugin-vue2';
 import { babel } from '@rollup/plugin-babel';
 
@@ -23,14 +22,14 @@ export default defineConfig(({ command, mode }) => {
     },
     plugins: [
       createVuePlugin(),
-      libCss(),
     ],
     build: {
       minify: isProd && 'esbuild',
       lib: {
         entry: path.resolve(__dirname, 'index.js'),
         name: 'GrabbingBox',
-        fileName: 'index',
+        // 默认 formats: ['es', 'umd']
+        fileName: (format) => `index${format === 'es' ? '' : '.' + format}.js`,
       },
       outDir: '../../dist/vue2',
       cssCodeSplit: true,

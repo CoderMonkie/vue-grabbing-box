@@ -21,6 +21,10 @@ This is a container component (Vue component) similar to a canvas box, which dis
 
 ![](docs/images/vue2-demo-captture.gif)
 
+## Changelog
+
+read [changelog](./CHANGELOG.md)
+
 ## Install
 
 ```bash
