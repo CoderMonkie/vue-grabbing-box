@@ -23,31 +23,33 @@
 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 <!-- 引入组件库 -->
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<!-- <script type="module" src="https://unpkg.com/vue-grabbing-box@0.0.6/dist/vue2/index.umd.js"></script> -->
+<script src="../../dist/vue2/index.umd.js"></script>
 </head>
 <body>
   <div id="app">
   </div>
-
-  <script src="../../dist/vue2/grabbing-box.umd.cjs"></script>
-
   
   <script>
-    Vue.use(GrabbingBox)
-    console.log('grabbing box', GrabbingBox)
+    window.addEventListener('load', () => {
+      console.log(window.GrabbingBox)
+      Vue.use(GrabbingBox)
+      console.log('grabbing box', GrabbingBox)
 
-    var app = new Vue({
-      el: '#app',
-      data: {
-        message: 'Hello Vue!'
-      },
-      components: {
-        // GrabbingBox: GrabbingBox.GrabbingBox,
-      },
-      template: `
-        <grabbing-box>
-          <img src="./play.tailwindcss.com.png" />
-        </grabbing-box>
-      `
+      var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue!'
+        },
+        components: {
+          // GrabbingBox: GrabbingBox.GrabbingBox,
+        },
+        template: `
+          <grabbing-box>
+            <img src="./play.tailwindcss.com.png" />
+          </grabbing-box>
+        `
+      })
     })
   </script>
 </body>
