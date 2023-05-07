@@ -39,6 +39,10 @@ OK，发量换代码，成交。
 > 另，来到这家公司开上了历史的倒车用上了 vue2  
 > 所以是先开发了 vue2 版的，后续会再做一版 vue3 的
 
+## 更新记录
+
+[changelog](./CHANGELOG.md)
+
 ## 使用
 
 ### Vue@2
@@ -54,16 +58,17 @@ yarn add vue-grabbing-box
 ```js
 import Vue from 'vue';
 import GrabbingBox from 'vue-grabbing-box'; // 直接引入默认 vue2
-// 注：打包 ESM 时可以通过插件自动引入样式，而 umd 不行，需要再引入样式
-// import 'vue-grabbing-box/dist/vue2/index.css';
 // 或
 import GrabbingBox from 'vue-grabbing-box/dist/vue2`; // 指定 vue2（推荐）
+// v0.1.0起，不再将css一并打包进js文件，需要单独引入样式
+import 'vue-grabbing-box/dist/vue2/index.css';
 
 Vue.use(GrabbingBox);
 
 // 组件级安装（局部安装）也是支持的，只是就一个组件而已，又不是组件库，就没必要了
 // 而且组件单独安装必需要单独引入样式
 import GrabbingBox from 'vue-grabbing-box/packages/vue2/src/grabbing-box';
+import 'vue-grabbing-box/dist/vue2/index.css';
 Vue.use(GrabbingBox);
 // 或
 Vue.component(GrabbingBox.name, GrabbingBox);
@@ -77,7 +82,8 @@ Vue.component(GrabbingBox.name, GrabbingBox);
 </template>
 ```
 
-*注：scale 按钮组中使用了 ElButton*
+~~*注：scale 按钮组中使用了 ElButton*~~  
+v0.1.0起不再依赖 ElementUI 的 ElButton 组件
 
 ### Vue@3
 

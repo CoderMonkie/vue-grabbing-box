@@ -45,6 +45,7 @@ import GrabbingBox from 'vue-grabbing-box'; // import as vue2 for default
 // or
 import GrabbingBox from 'vue-grabbing-box/dist/vue2`; // specify vue2
 // recommend, in case of changing default export to vue3
+import 'vue-grabbing-box/dist/vue2/index.css'; // from v0.1.0 need to import css file
 Vue.use(GrabbingBox);
 
 // or import component directly
@@ -63,7 +64,8 @@ Vue.component(GrabbingBox.name, GrabbingBox);
 </template>
 ```
 
-*Note: used ElButton in scale button-group*
+~~*Note: used ElButton in scale button-group*~~  
+(No more using ElButton from v0.1.0)
 
 ## API
 
