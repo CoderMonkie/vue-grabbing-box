@@ -5,7 +5,8 @@
       :class="{ 'is-disabled': scaleLimitOverMax }"
       @click="zoomIn"
     >
-      <Icon icon="ic:round-plus" :size="20" style="margin-top: 3px" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="margin-top:3px"><path fill="currentColor" d="M18 12.998h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5v-5a1 1 0 0 1 2 0v5h5a1 1 0 0 1 0 2z"/></svg>
+      <!-- <Icon icon="ic:round-plus" :size="20" style="margin-top: 3px" /> -->
     </div>
 
     <div style="display: inline-block; margin: 0 8px">{{ scaling }}%</div>
@@ -15,7 +16,8 @@
       :class="{ 'is-disabled': scaleLimitBelowMin }"
       @click="zoomOut"
     >
-      <Icon icon="ic:round-minus" :size="20" style="margin-top: 3px" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="margin-top:3px"><path fill="currentColor" d="M18 12.998H6a1 1 0 0 1 0-2h12a1 1 0 0 1 0 2z"/></svg>
+      <!-- <Icon icon="ic:round-minus" :size="20" style="margin-top: 3px" /> -->
     </div>
 
     <div class="scale-button btn-reset" @click="reset">重置</div>
@@ -23,8 +25,6 @@
 </template>
 
 <script>
-import { Icon } from "@iconify/vue2";
-
 /**
  * Scale button group
  */
@@ -47,7 +47,6 @@ export default {
       default: 20,
     },
   },
-  components: { Icon },
   computed: {
     scaleLimitOverMax() {
       return this.scaling >= this.maxScale;
