@@ -13,6 +13,17 @@
       @zoom-in="zoomIn"
       @zoom-out="zoomOut"
       @reset="reset"
+      class="scale-button-group"
+      :class="{
+        'custom-position-top': safeScaleButtonsPosition.top,
+        'custom-position-bottom': safeScaleButtonsPosition.bottom,
+        'custom-position-left': safeScaleButtonsPosition.left,
+        'custom-position-right': safeScaleButtonsPosition.right,
+      }"
+      :style="`
+        --scale-buttons-space-x: ${scaleButtonsSpaceX};
+        --scale-buttons-space-y: ${scaleButtonsSpaceY};
+      `"
     />
 
     <div
@@ -57,6 +68,19 @@ export default {
     scaleButtons: {
       type: Boolean,
       default: true,
+    },
+    // Scale buttons position
+    scaleButtonsPosition: {
+      type: String,
+      default: 'top right',
+    },
+    scaleButtonsSpaceX: {
+      type: String,
+      default: '10px',
+    },
+    scaleButtonsSpaceY: {
+      type: String,
+      default: '20px',
     },
     // 点击缩放按钮时的步长
     scaleStep: {
@@ -104,7 +128,22 @@ export default {
       if (SCROLL_SPEED_MIN > this.scrollSpeed) return SCROLL_SPEED_MIN;
       if (SCROLL_SPEED_MAX < this.scrollSpeed) return SCROLL_SPEED_MAX;
       return this.scrollSpeed;
-    }
+    },
+    safeScaleButtonsPosition() {
+      const str = (this.scaleButtonsPosition || '').trim().toLowerCase();
+      // 传空值的时候
+      if (!str) return { right: true, top: true , left: false, bottom: false };
+
+      const horizotal = str.includes('left') ? 'left' : 'right'; // 未传水平值的时候默认是 right
+      const vertical = str.includes('bottom') ? 'bottom' : 'top'; // 未传垂直值的时候默认是 top
+
+      return {
+        top: vertical === 'top',
+        bottom: vertical === 'bottom',
+        left: horizotal === 'left',
+        right: horizotal === 'right',
+      }
+    },
   },
   data() {
     return {
@@ -424,22 +463,6 @@ export default {
       }
       return scale;
     },
-    // calcScale(touch1, touch2) {
-    //   // 算出当前两指的距离
-    //   const distance = Math.sqrt(((touch1.clientX - touch2.clientX) * (touch1.clientX - touch2.clientX)) +
-    //             ((touch1.clientY - touch2.clientY) * (touch1.clientY - touch2.clientY)))
-    //   // 距离上放大或缩小的比例
-    //   const dScale = distance / this.lastPosition.distance * 100;
-    //   // 现有的缩放基础上计算将来值
-    //   const newScale = this.lastTransformData.scale * dScale;
-    //   if (newScale > this.maxScale) {
-    //     return this.maxScale / 100;
-    //   } else if (newScale < this.minScale) {
-    //     return this.minScale / 100;
-    //   } else {
-    //     return parseFloat(newScale.toFixed(2));
-    //   }
-    // },
   },
 };
 </script>
@@ -454,6 +477,27 @@ export default {
   .cursor-grabbing,
   .cursor-grabbing * {
     cursor: grabbing;
+  }
+
+  .scale-button-group {
+    --scale-buttons-space-x: 10px;
+    --scale-buttons-space-y: 20px;
+    &.custom-position-top {
+      top: var(--scale-buttons-space-y);
+      bottom: unset;
+    }
+    &.custom-position-bottom {
+      bottom: var(--scale-buttons-space-y);
+      top: unset;
+    }
+    &.custom-position-left {
+      left: var(--scale-buttons-space-x);
+      right: unset;
+    }
+    &.custom-position-right {
+      right: var(--scale-buttons-space-x);
+      left: unset;
+    }
   }
 
   .grabbing-box * {
