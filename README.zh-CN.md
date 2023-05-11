@@ -47,6 +47,8 @@ OK，发量换代码，成交。
 
 ### Vue@2
 
+[demo-vue2](./example/demo-vue2/)
+
 ```bash
 pnpm add vue-grabbing-box
 # or
