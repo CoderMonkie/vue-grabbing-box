@@ -46,7 +46,7 @@
     "access": "public"
   },
   "dependencies": {
-    "element-ui": "^2.15.13",
     "vue": "^2.6.14"
-  }
+  },
+  "packageManager": "pnpm@7.30.5+"
 }
