@@ -6,7 +6,7 @@ importers:
     specifiers:
       sass: ^1.62.1
       vite: ^4.3.1
-      vue: ^2.6.14
+      vue: ~2.6.14
     dependencies:
       vue: 2.6.14
     devDependencies:
@@ -19,10 +19,9 @@ importers:
       '@babel/preset-env': ^7.21.5
       '@iconify/vue2': ^2.1.0
       '@rollup/plugin-babel': ^6.0.3
-      vite-plugin-libcss: ^1.0.6
       vite-plugin-vue2: ^2.0.3
       vue: ~2.6.14
-      vue-template-compiler: ^2.6.14
+      vue-template-compiler: 2.6.14
     dependencies:
       vue: 2.6.14
     devDependencies:
@@ -30,7 +29,6 @@ importers:
       '@babel/preset-env': 7.21.5_@babel+core@7.21.5
       '@iconify/vue2': 2.1.0_vue@2.6.14
       '@rollup/plugin-babel': 6.0.3_@babel+core@7.21.5
-      vite-plugin-libcss: 1.0.6
       vite-plugin-vue2: 2.0.3_sbs6or2oam5i4s4vmfp4rzwdnq
       vue-template-compiler: 2.6.14
 
@@ -2881,12 +2879,6 @@ packages:
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
-    dev: true
-
-  /vite-plugin-libcss/1.0.6:
-    resolution: {integrity: sha512-DUkVPiNEPFRpshhsqek9b/vPH4piytTsrlyRdl84ns4NlR7PJNSmjtDvyBytrL7E+jsrXD5iCEzBOtrChX45CA==}
-    peerDependencies:
-      vite: '*'
     dev: true
 
   /vite-plugin-vue2/2.0.3_sbs6or2oam5i4s4vmfp4rzwdnq:
