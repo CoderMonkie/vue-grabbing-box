@@ -39,6 +39,8 @@ yarn add vue-grabbing-box
 
 ### Vue@2
 
+[demo-vue2](./example/demo-vue2/)
+
 ```js
 import Vue from 'vue';
 import GrabbingBox from 'vue-grabbing-box'; // import as vue2 for default
