@@ -19,6 +19,13 @@ release for vue@2.7
 - support i18n  
   (using vue-i18n, for the reset button)
 
+## 0.1.2 (2023.05.11)
+
+### Fix
+
+- [iconify-error](https://github.com/CoderMonkie/vue-grabbing-box/issues/2)  
+  use svg instead
+
 ## 0.1.1 (2023.05.11)
 
 ### Features
