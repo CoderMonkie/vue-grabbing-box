@@ -97,5 +97,8 @@ TODO
 |minScale|Number|20|缩小的最小比例限制，单位百分比|
 |scaleStep|Number|10|放大缩小的步长，点击按钮时用，单位同上|
 |scaleButtons|Boolean|true|是否显示 scale 按钮组，包括放大（+）缩小（-）和重置|
+|scaleButtonsPosition|String|`top right`|`v0.1.1` 指定缩放按钮组的位置, `top \| right \| bottom \| left`|
+|scaleButtonsSpaceX|String|`10px`|`v0.1.1` 指定与边的横向距离|
+|scaleButtonsSpaceY|String|`20px`|`v0.1.1` 指定与边的纵向距离|
 |throttleSpan|Number|100|事件节流时间间隔，单位毫秒|
 |scrollSpeed|Number|3|`v0.0.6` PC端鼠标滚动轮上下滚动倍速，可设范围`1`~`6`|
