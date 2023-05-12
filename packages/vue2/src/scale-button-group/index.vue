@@ -1,30 +1,25 @@
 <template>
   <div class="scale-btn-group flex items-center">
-    <div
-      class="scale-button btn-plus"
-      :class="{ 'is-disabled': scaleLimitOverMax }"
+    <el-button
+      icon="el-icon-plus"
+      size="mini"
       @click="zoomIn"
-    >
-      <Icon icon="ic:round-plus" :size="20" style="margin-top: 3px" />
-    </div>
-
-    <div style="display: inline-block; margin: 0 8px">{{ scaling }}%</div>
-
-    <div
-      class="scale-button btn-minus"
-      :class="{ 'is-disabled': scaleLimitBelowMin }"
+      :disabled="scaleLimitOverMax"
+      circle
+    ></el-button>
+    <span style="margin: 0 8px;">{{ scaling }}%</span>
+    <el-button
+      icon="el-icon-minus"
+      size="mini"
       @click="zoomOut"
-    >
-      <Icon icon="ic:round-minus" :size="20" style="margin-top: 3px" />
-    </div>
-
-    <div class="scale-button btn-reset" @click="reset">重置</div>
+      :disabled="scaleLimitBelowMin"
+      circle
+    ></el-button>
+      <el-button size="mini" @click="reset">重置</el-button>
   </div>
 </template>
 
 <script>
-import { Icon } from "@iconify/vue2";
-
 /**
  * Scale button group
  */
@@ -47,7 +42,6 @@ export default {
       default: 20,
     },
   },
-  components: { Icon },
   computed: {
     scaleLimitOverMax() {
       return this.scaling >= this.maxScale;
