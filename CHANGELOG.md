@@ -12,12 +12,20 @@ release for feature & improvement
 
 release for vue@2.7
 
-## 0.1.2 (TODO)
+## 0.1.x (TODO)
 
 ### Features
 
 - support i18n  
   (using vue-i18n, for the reset button)
+
+## 0.1.3 (2023.05.15)
+
+- update [demo-vue2](https://codermonkie.github.io/vue-grabbing-box/demo-vue2/) & deploy to Github Pages.
+- update README
+- change default values
+  - throttleSpan `100` -> `50`
+  - scrollSpeed `3` -> `1`
 
 ## 0.1.2 (2023.05.11)
 
