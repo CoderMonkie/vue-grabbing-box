@@ -27,6 +27,8 @@
         <el-input-number
           v-model="formData.maxScale"
           :step="10"
+          :min="150"
+          :max="500"
           :disabled="!formData.scaleButtons"
         ></el-input-number>
       </el-form-item>
@@ -35,6 +37,8 @@
         <el-input-number
           v-model="formData.minScale"
           :step="10"
+          :min="0"
+          :max="50"
           :disabled="!formData.scaleButtons"
         ></el-input-number>
       </el-form-item>
