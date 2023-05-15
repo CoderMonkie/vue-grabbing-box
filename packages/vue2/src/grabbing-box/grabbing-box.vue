@@ -42,7 +42,7 @@ import ScaleButtonGroup from '../scale-button-group/index.vue';
 
 const SCROLL_SPEED_MIN = 1;
 const SCROLL_SPEED_MAX = 6;
-const SCROLL_SPEED_DEFAULT = 3;
+const SCROLL_SPEED_DEFAULT = 1;
 
 /**
  * 画布拖拽扩缩放组件
@@ -90,7 +90,7 @@ export default {
     // 节流函数的时间间隔
     throttleSpan: {
       type: Number,
-      default: 100,
+      default: 50,
     },
     scrollSpeed: {
       type: Number,
