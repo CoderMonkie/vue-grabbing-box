@@ -88,5 +88,5 @@ TODO
 |scaleButtonsPosition|String|`top right`|`v0.1.1` 指定缩放按钮组的位置, `top \| right \| bottom \| left`|
 |scaleButtonsSpaceX|String|`10px`|`v0.1.1` 指定与边的横向距离|
 |scaleButtonsSpaceY|String|`20px`|`v0.1.1` 指定与边的纵向距离|
-|throttleSpan|Number|100|事件节流时间间隔，单位毫秒|
-|scrollSpeed|Number|3|`v0.0.6` PC端鼠标滚动轮上下滚动倍速，可设范围`1`~`6`|
+|throttleSpan|Number|~~100~~ 50(from `v0.1.3`)|事件节流时间间隔，单位毫秒|
+|scrollSpeed|Number|~~3~~ 1(from `v0.1.3`)|`v0.0.6` PC端鼠标滚动轮上下滚动倍速，可设范围`1`~`6`|
