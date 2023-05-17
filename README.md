@@ -19,6 +19,8 @@ This is a container component (Vue component) similar to a canvas box, which dis
   - Scale by 'Ctrl'+'Wheel'
   - You can also zoom-in, zoom-out, and reset by clicking the button
 
+Try it out: [demo-vue2](https://codermonkie.github.io/vue-grabbing-box/demo-vue2/)
+
 ![](docs/images/vue2-demo-captture.gif)
 
 ## Changelog
@@ -80,5 +82,5 @@ Vue.component(GrabbingBox.name, GrabbingBox);
 |scaleButtonsPosition|String|`top right`|`v0.1.1` specify the position of scale button-group, `top \| right \| bottom \| left`|
 |scaleButtonsSpaceX|String|`10px`|`v0.1.1` specify the horizontal space to edge|
 |scaleButtonsSpaceY|String|`20px`|`v0.1.1` specify the vertical space to edge|
-|throttleSpan|Number|100|unit millisecond|
-|scrollSpeed|Number|3|`v0.0.6` mouse scroll speed，value range `1`~`6`|
+|throttleSpan|Number|~~100~~ 50(from `v0.1.3`)|unit millisecond|
+|scrollSpeed|Number|~~3~~ 1(from `v0.1.3`)|`v0.0.6` mouse scroll speed，value range `1`~`6`|
