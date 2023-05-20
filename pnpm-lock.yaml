@@ -20,11 +20,13 @@ importers:
       core-js: ^3.8.3
       element-ui: ^2.15.13
       vue: ^2.6.14
+      vue-grabbing-box: ^0.1.4
       vue-template-compiler: ^2.6.14
     dependencies:
       core-js: 3.30.2
       element-ui: 2.15.13_vue@2.6.14
       vue: 2.6.14
+      vue-grabbing-box: link:../..
     devDependencies:
       '@vue/cli-plugin-babel': 5.0.8_kdpya376pd4ceqci3huwwuvsea
       '@vue/cli-service': 5.0.8_sbs6or2oam5i4s4vmfp4rzwdnq
