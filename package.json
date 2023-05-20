@@ -1,6 +1,6 @@
 {
   "name": "vue-grabbing-box",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "vue-grabbing-box is a container component that allows you to grab to change view-box and also with scaling",
   "files": [
     "dist",
@@ -13,7 +13,9 @@
   "scripts": {
     "dev": "echo TODO",
     "build": "pnpm -F '@vue-grabbing-box/vue*' build",
-    "build:publish": "pnpm build && pnpm publish"
+    "build:publish": "pnpm build && pnpm publish",
+    "build:demo": "pnpm -F '@vue-grabbing-box/demo-*' build",
+    "postbuild:demo": "./scripts/gh-pages.sh"
   },
   "keywords": [
     "canvas",

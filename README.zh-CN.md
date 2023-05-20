@@ -90,3 +90,4 @@ TODO
 |scaleButtonsSpaceY|String|`20px`|`v0.1.1` 指定与边的纵向距离|
 |throttleSpan|Number|~~100~~ 50(from `v0.1.3`)|事件节流时间间隔，单位毫秒|
 |scrollSpeed|Number|~~3~~ 1(from `v0.1.3`)|`v0.0.6` PC端鼠标滚动轮上下滚动倍速，可设范围`1`~`6`|
+|emitClickOnDrag|Boolean|false|`v0.1.4` 拖拽后仍触发点击事件 (只是为了预防有特殊需要, 通常可以忽略这个参数 [#7 屏蔽 click](https://github.com/CoderMonkie/vue-grabbing-box/issues/7))|

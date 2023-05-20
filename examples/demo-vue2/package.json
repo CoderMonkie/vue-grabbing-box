@@ -1,11 +1,10 @@
 {
-  "name": "demo-vue2",
+  "name": "@vue-grabbing-box/demo-vue2",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build && pnpm gh-pages",
-    "gh-pages": "pnpm config set shell-emulator true && ./scripts/gh-pages.sh"
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "core-js": "^3.8.3",

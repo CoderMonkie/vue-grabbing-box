@@ -84,3 +84,4 @@ Vue.component(GrabbingBox.name, GrabbingBox);
 |scaleButtonsSpaceY|String|`20px`|`v0.1.1` specify the vertical space to edge|
 |throttleSpan|Number|~~100~~ 50(from `v0.1.3`)|unit millisecond|
 |scrollSpeed|Number|~~3~~ 1(from `v0.1.3`)|`v0.0.6` mouse scroll speed，value range `1`~`6`|
+|emitClickOnDrag|Boolean|false|`v0.1.4` emit click event even if have dragged (just in case of special usage case, usually could ignore this prop [#7 no-emit-click](https://github.com/CoderMonkie/vue-grabbing-box/issues/7))|
