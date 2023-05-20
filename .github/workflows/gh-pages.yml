@@ -16,7 +16,7 @@ jobs:
           npm install -g pnpm@7.30.5
           pnpm install
       - name: Build lib packages
-          pnpm build
+        run: pnpm build
       - name: Build demo packages (& deploy to Github Pages)
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN_FOR_PAGES }}
