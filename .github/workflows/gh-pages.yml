@@ -1,4 +1,4 @@
-name: Publish NPM Package
+name: Deploy gh-pages
 
 on:
   push:
