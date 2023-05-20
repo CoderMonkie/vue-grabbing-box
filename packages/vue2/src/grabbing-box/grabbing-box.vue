@@ -327,7 +327,6 @@ export default {
       }
     },
     onMouseUp() {
-      this.dragged = this.dragging; // true of false, used in click handler for cancel click
       this.readyToDrag = false;
       this.dragging = false;
       this.unbindEvent(this.$refs.containerRef, 'click', this.handleInnerClick); // 虽然这里取消监听，本次 click 还是能触发的

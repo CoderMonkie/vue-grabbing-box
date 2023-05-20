@@ -18,86 +18,86 @@
       <HelloWorld msg="Welcome to Your Vue.js App" />
     </grabbing-box>
 
-    <el-form
-      :model="formData"
-      inline
-      size="small"
-      style="margin-top: 20px; border: 1px solid gray; padding: 10px"
-    >
-      <el-form-item label="Max Scale">
-        <el-input-number
-          v-model="formData.maxScale"
-          :step="10"
-          :min="150"
-          :max="500"
-          :disabled="!formData.scaleButtons"
-        ></el-input-number>
-      </el-form-item>
-
-      <el-form-item label="Min Scale">
-        <el-input-number
-          v-model="formData.minScale"
-          :step="10"
-          :min="0"
-          :max="50"
-          :disabled="!formData.scaleButtons"
-        ></el-input-number>
-      </el-form-item>
-
-      <el-form-item label="Scale Step">
-        <el-input-number
-          v-model="formData.scaleStep"
-          :step="5"
-          :disabled="!formData.scaleButtons"
-        ></el-input-number>
-      </el-form-item>
-
-      <el-form-item label="Scale Buttons">
-        <el-switch v-model="formData.scaleButtons" />
-      </el-form-item>
-
-      <el-form-item label="Scale Buttons Position">
-        <el-radio-group
-          v-model="formData.scaleButtonsVertical"
-          :disabled="!formData.scaleButtons"
-          style="margin-right: 20px"
-        >
-          <el-radio label="top">top</el-radio>
-          <el-radio label="bottom">bottom</el-radio>
-        </el-radio-group>
-
-        <el-radio-group
-          v-model="formData.scaleButtonsHorizontal"
-          :disabled="!formData.scaleButtons"
-          style="margin-right: 20px"
-        >
-          <el-radio label="left">left</el-radio>
-          <el-radio label="right">right</el-radio>
-        </el-radio-group>
-
-        <el-form-item label="Scale Buttons SpaceX">
+    <div class="form-container" @click.stop="void 0">
+      <el-form
+        :model="formData"
+        inline
+        size="small"
+        style="margin-top: 20px; border: 1px solid gray; padding: 10px"
+      >
+        <el-form-item label="Max Scale">
           <el-input-number
-            v-model="formData.scaleButtonsSpaceX"
+            v-model="formData.maxScale"
+            :step="10"
+            :min="150"
+            :max="500"
+            :disabled="!formData.scaleButtons"
+          ></el-input-number>
+        </el-form-item>
+
+        <el-form-item label="Min Scale">
+          <el-input-number
+            v-model="formData.minScale"
+            :step="10"
+            :min="0"
+            :max="50"
+            :disabled="!formData.scaleButtons"
+          ></el-input-number>
+        </el-form-item>
+
+        <el-form-item label="Scale Step">
+          <el-input-number
+            v-model="formData.scaleStep"
             :step="5"
             :disabled="!formData.scaleButtons"
           ></el-input-number>
         </el-form-item>
 
-        <el-form-item label="Scale Buttons SpaceY">
-          <el-input-number
-            v-model="formData.scaleButtonsSpaceY"
-            :step="5"
-            :disabled="!formData.scaleButtons"
-          ></el-input-number>
+        <el-form-item label="Scale Buttons">
+          <el-switch v-model="formData.scaleButtons" />
         </el-form-item>
 
-        <el-form-item label="Emit click on drag">
-          <el-switch
-            v-model="formData.emitClickOnDrag"
-          ></el-switch>
+        <el-form-item label="Scale Buttons Position">
+          <el-radio-group
+            v-model="formData.scaleButtonsVertical"
+            :disabled="!formData.scaleButtons"
+            style="margin-right: 20px"
+          >
+            <el-radio label="top">top</el-radio>
+            <el-radio label="bottom">bottom</el-radio>
+          </el-radio-group>
+
+          <el-radio-group
+            v-model="formData.scaleButtonsHorizontal"
+            :disabled="!formData.scaleButtons"
+            style="margin-right: 20px"
+          >
+            <el-radio label="left">left</el-radio>
+            <el-radio label="right">right</el-radio>
+          </el-radio-group>
+
+          <el-form-item label="Scale Buttons SpaceX">
+            <el-input-number
+              v-model="formData.scaleButtonsSpaceX"
+              :step="5"
+              :disabled="!formData.scaleButtons"
+            ></el-input-number>
+          </el-form-item>
+
+          <el-form-item label="Scale Buttons SpaceY">
+            <el-input-number
+              v-model="formData.scaleButtonsSpaceY"
+              :step="5"
+              :disabled="!formData.scaleButtons"
+            ></el-input-number>
+          </el-form-item>
+
+          <el-form-item label="Emit click on drag">
+            <el-switch v-model="formData.emitClickOnDrag"></el-switch>
+          </el-form-item>
         </el-form-item>
-      </el-form-item>
-    </el-form>
+      </el-form>
+    </div>
   </div>
 </template>
 
@@ -140,9 +140,9 @@ export default {
   methods: {
     onClick() {
       this.$message({
-        message: 'Clicked outside the grabbing box.',
-        type: 'warning'
-      })
+        message: "Click event triggered on the upper-level of the grabbing box.",
+        type: "warning",
+      });
     },
   },
 };
