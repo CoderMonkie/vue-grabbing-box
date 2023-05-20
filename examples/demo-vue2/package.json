@@ -9,7 +9,8 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "element-ui": "^2.15.13",
-    "vue": "^2.6.14"
+    "vue": "^2.6.14",
+    "vue-grabbing-box": "^0.1.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
