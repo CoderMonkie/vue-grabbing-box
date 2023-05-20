@@ -17,5 +17,5 @@ jobs:
           pnpm install
       - name: Build demo packages (& deploy to Github Pages)
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN_FOR_PAGES }}
         run: pnpm build:demo
