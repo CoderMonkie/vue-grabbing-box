@@ -18,10 +18,6 @@ jobs:
       - name: Build package
         run: pnpm build
       - name: Login to npm
-        run: npm login --registry=https://registry.npmjs.org/ --always-auth
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> ~/.npmrc
       - name: Publish package
         run: pnpm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
