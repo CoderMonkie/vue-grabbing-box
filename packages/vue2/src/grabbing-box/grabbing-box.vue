@@ -163,6 +163,7 @@ export default {
       isScaling: false,
       // 缩放导致偏移的比例
       scaleTranslateProportion: [0 ,0], // TODO
+      dragged: false, // fix #7 完成一次拖拽后标记为true，控制 click 事件是否取消冒泡等，适时重置
     };
   },
   methods: {
@@ -273,12 +274,23 @@ export default {
      * PC端事件处理
      * -------------------
      */
+    handleInnerClick(event) {
+      // stop event propagation and prevent default behavior when have dragged
+      if (this.dragged) {
+        event.stopPropagation()
+        event.preventDefault()
+        console.log('grabbing-box-click: stop event propagation and prevent default behavior')
+      }
+    },
     onMouseDown(event) {
       this.readyToDrag = true;
       this.lastPosition = {
         x: event.clientX,
         y: event.clientY,
       };
+
+      this.dragged = false;
+      this.bindEvent(this.$refs.containerRef, 'click', this.handleInnerClick, { capture: true });
     },
     onMouseMove(event) {
       if (this.readyToDrag) {
@@ -295,11 +307,14 @@ export default {
           x: clientX,
           y: clientY,
         };
+        this.dragged = true;
       }
     },
     onMouseUp() {
+      this.dragged = this.dragging; // true of false, used in click handler for cancel click
       this.readyToDrag = false;
       this.dragging = false;
+      this.unbindEvent(this.$refs.containerRef, 'click', this.handleInnerClick); // 虽然这里取消监听，本次 click 还是能触发的
     },
     onMouseLeave() {
     },
