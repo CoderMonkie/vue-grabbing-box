@@ -17,9 +17,9 @@ jobs:
           pnpm install
       - name: Build lib packages
         run: pnpm build
-      - name: Build demo packages (& deploy to Github Pages)
+      - name: Build demo packages
         run: pnpm build:demo
-      - name: Push to repository
+      - name: Push to repository (to deploy gh-pagse)
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN_FOR_PAGES }}
         run: |
