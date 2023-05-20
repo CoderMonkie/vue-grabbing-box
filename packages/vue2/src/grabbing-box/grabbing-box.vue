@@ -98,7 +98,18 @@ export default {
       validator(value) {
         return SCROLL_SPEED_MIN <= value && value <= SCROLL_SPEED_MAX;
       }
-    }
+    },
+    /**
+     * [#7](https://github.com/CoderMonkie/vue-grabbing-box/issues/7)
+     * 阻止 drag 时的 click 事件
+     * 
+     * 默认当 drag 后不触发 click 事件  
+     * 如有特殊需要，将`emitClickOnDrag`设为`true`
+     */
+    emitClickOnDrag: {
+      type: Boolean,
+      default: false,
+    },
   },
   components: { ScaleButtonGroup },
   mounted() {
@@ -276,7 +287,7 @@ export default {
      */
     handleInnerClick(event) {
       // stop event propagation and prevent default behavior when have dragged
-      if (this.dragged) {
+      if (!this.emitClickOnDrag && this.dragged) {
         event.stopPropagation()
         event.preventDefault()
         console.log('grabbing-box-click: stop event propagation and prevent default behavior')
@@ -289,8 +300,10 @@ export default {
         y: event.clientY,
       };
 
-      this.dragged = false;
-      this.bindEvent(this.$refs.containerRef, 'click', this.handleInnerClick, { capture: true });
+      if (!this.emitClickOnDrag) {
+        this.dragged = false;
+        this.bindEvent(this.$refs.containerRef, 'click', this.handleInnerClick, { capture: true });
+      }
     },
     onMouseMove(event) {
       if (this.readyToDrag) {
@@ -307,7 +320,10 @@ export default {
           x: clientX,
           y: clientY,
         };
-        this.dragged = true;
+        
+        if (!this.emitClickOnDrag) {
+          this.dragged = true;
+        }
       }
     },
     onMouseUp() {

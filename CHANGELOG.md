@@ -19,6 +19,12 @@ release for vue@2.7
 - support i18n  
   (using vue-i18n, for the reset button)
 
+## 0.1.4 (2023.05.20)
+
+- feature: cancel click event when have dragged  
+  if really need the click event, set `emitClickOnDrag` to `true`  
+  releated issue [#7](https://github.com/CoderMonkie/vue-grabbing-box/issues/7)
+
 ## 0.1.3 (2023.05.15)
 
 - update [demo-vue2](https://codermonkie.github.io/vue-grabbing-box/demo-vue2/) & deploy to Github Pages.
