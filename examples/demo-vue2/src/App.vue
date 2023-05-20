@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" @click="onClick">
     <grabbing-box
       ref="grabbingBoxRef"
       :maxScale="formData.maxScale"
@@ -11,6 +11,7 @@
       :scaleButtonsSpaceY="formData.scaleButtonsSpaceY + 'px'"
       :scrollSpeed="1"
       :throttleSpan="50"
+      :emitClickOnDrag="formData.emitClickOnDrag"
       style="border: 1px solid gray"
     >
       <img alt="Vue logo" src="./assets/logo.png" />
@@ -89,6 +90,12 @@
             :disabled="!formData.scaleButtons"
           ></el-input-number>
         </el-form-item>
+
+        <el-form-item label="Emit click on drag">
+          <el-switch
+            v-model="formData.emitClickOnDrag"
+          ></el-switch>
+        </el-form-item>
       </el-form-item>
     </el-form>
   </div>
@@ -113,6 +120,7 @@ export default {
         scaleButtonsHorizontal: "right",
         scaleButtonsSpaceX: 10,
         scaleButtonsSpaceY: 20,
+        emitClickOnDrag: false,
       },
     };
   },
@@ -127,6 +135,14 @@ export default {
         this.$forceUpdate();
       },
       deep: true,
+    },
+  },
+  methods: {
+    onClick() {
+      this.$message({
+        message: 'Clicked outside the grabbing box.',
+        type: 'warning'
+      })
     },
   },
 };
