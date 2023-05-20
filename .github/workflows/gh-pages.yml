@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  build-and-publish:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -15,9 +15,7 @@ jobs:
         run: |
           npm install -g pnpm@7.30.5
           pnpm install
-      - name: Build package
-        run: pnpm build
-      - name: Login to npm
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> ~/.npmrc
-      - name: Publish package
-        run: pnpm publish
+      - name: Build demo packages (& deploy to Github Pages)
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN_FOR_PAGES }}
+        run: pnpm build:demo
