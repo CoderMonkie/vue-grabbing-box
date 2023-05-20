@@ -18,6 +18,16 @@ jobs:
       - name: Build lib packages
         run: pnpm build
       - name: Build demo packages (& deploy to Github Pages)
+        run: pnpm build:demo
+      - name: Push to repository
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN_FOR_PAGES }}
-        run: pnpm build:demo
+        run: |
+          cd ./examples/dist
+          git init
+          git remote add origin https://github.com/CoderMonkie/vue-grabbing-box.git
+          git config user.email maonianyou@foxmail.com
+          # git pull origin gh-pages
+          git add .
+          git commit -m "auto deploy gh-pages for demo-vue2"
+          git push -u origin master:gh-pages --force
