@@ -1,0 +1,21 @@
+name: Publish NPM Package
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          npm install -g pnpm@7.30.5
+          pnpm install
+      - name: Build demo packages (& deploy to Github Pages)
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: pnpm build:demo
