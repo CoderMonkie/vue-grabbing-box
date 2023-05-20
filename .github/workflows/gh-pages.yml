@@ -26,6 +26,7 @@ jobs:
           cd ./examples/dist
           git init
           git remote add origin https://github.com/CoderMonkie/vue-grabbing-box.git
+          git config user.name maonianyou
           git config user.email maonianyou@foxmail.com
           # git pull origin gh-pages
           git add .
