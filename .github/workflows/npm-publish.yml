@@ -11,13 +11,26 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Check version change
+        run: |
+          if [[ $(git diff HEAD^..HEAD package.json | grep version) ]]; then
+            echo "Version changed, publishing to NPM..."
+          else
+            echo "Version not changed, skipping NPM publish."
+            exit 0
+          fi
+
       - name: Install dependencies
         run: |
           npm install -g pnpm@7.30.5
           pnpm install
+
       - name: Build package
         run: pnpm build
-      - name: Login to npm
+
+      - name: Append NPM token
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> ~/.npmrc
+
       - name: Publish package
         run: pnpm publish
