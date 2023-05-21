@@ -14,23 +14,27 @@ jobs:
 
       - name: Check version change
         run: |
-          if [[ $(git diff HEAD^..HEAD package.json | grep version) ]]; then
+          if [[ $(git diff HEAD~..HEAD -- package.json | grep version) ]]; then
             echo "Version changed, publishing to NPM..."
           else
             echo "Version not changed, skipping NPM publish."
-            exit 0
+            exit 1
           fi
 
       - name: Install dependencies
+        if: ${{ success() }}
         run: |
           npm install -g pnpm@7.30.5
           pnpm install
 
       - name: Build package
+        if: ${{ success() }}
         run: pnpm build
 
       - name: Append NPM token
+        if: ${{ success() }}
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> ~/.npmrc
 
       - name: Publish package
+        if: ${{ success() }}
         run: pnpm publish
