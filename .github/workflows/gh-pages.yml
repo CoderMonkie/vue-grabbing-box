@@ -26,8 +26,8 @@ jobs:
           cd ./examples/dist
           git init
           git remote add origin git@github.com:CoderMonkie/vue-grabbing-box.git
-          git config user.name maonianyou
-          git config user.email maonianyou@foxmail.com
+          git config user.name CoderMonkie
+          git config user.email maonianyou@gmail.com
           # git pull origin gh-pages
           git add .
           git commit -m "auto deploy gh-pages for demo-vue2"
