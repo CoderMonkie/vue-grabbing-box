@@ -11,30 +11,34 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          ref: 'master'
 
       - name: Check version change
         run: |
-          if [[ $(git diff HEAD~..HEAD -- package.json | grep version) ]]; then
+          if [[ $(git diff HEAD~2..HEAD -- package.json | grep version) ]]; then
             echo "Version changed, publishing to NPM..."
+            echo "NEED_NPM_PUBLISH=true" >> $GITHUB_ENV
           else
             echo "Version not changed, skipping NPM publish."
-            exit 1
+            echo "NEED_NPM_PUBLISH=false" >> $GITHUB_ENV
+            exit 0
           fi
 
       - name: Install dependencies
-        if: ${{ success() }}
+        if: env.NEED_NPM_PUBLISH == 'true'
         run: |
           npm install -g pnpm@7.30.5
           pnpm install
 
       - name: Build package
-        if: ${{ success() }}
+        if: env.SKIP_NPM_PUBLISH != 'true'
         run: pnpm build
 
       - name: Append NPM token
-        if: ${{ success() }}
+        if: env.NEED_NPM_PUBLISH == 'true'
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" >> ~/.npmrc
 
       - name: Publish package
-        if: ${{ success() }}
+        if: env.NEED_NPM_PUBLISH == 'true'
         run: pnpm publish
