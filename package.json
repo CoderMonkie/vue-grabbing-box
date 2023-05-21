@@ -14,7 +14,8 @@
     "dev": "echo TODO",
     "build": "pnpm -F '@vue-grabbing-box/vue*' build",
     "build:publish": "pnpm build && pnpm publish",
-    "build:demo": "pnpm -F '@vue-grabbing-box/demo-*' build"
+    "build:demo": "pnpm -F '@vue-grabbing-box/demo-*' build",
+    "deploy:gh-pages": "pnpm build:demo && ./scripts/gh-pages.sh"
   },
   "keywords": [
     "canvas",

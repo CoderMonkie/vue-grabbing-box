@@ -1,4 +1,4 @@
-name: Deploy gh-pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,29 +6,28 @@ on:
       - master
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Install dependencies
-        run: |
-          npm install -g pnpm@7.30.5
-          pnpm install
-      - name: Build lib packages
-        run: pnpm build
-      - name: Build demo packages
-        run: pnpm build:demo
-      - name: Push to repository (to deploy gh-pagse)
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN_FOR_PAGES }}
-        run: |
-          cd ./examples/dist
-          git init
-          git remote add origin git@github.com:CoderMonkie/vue-grabbing-box.git
-          git config user.name CoderMonkie
-          git config user.email maonianyou@gmail.com
-          # git pull origin gh-pages
-          git add .
-          git commit -m "auto deploy gh-pages for demo-vue2"
-          git push -u origin master:gh-pages --force
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+
+    - name: Install dependencies
+      run: |
+        npm install -g pnpm@7.30.5
+        pnpm install
+
+    - name: Build website
+      run: pnpm build:demo
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.ACCESS_TOKEN_FOR_PAGES }}
+        publish_dir: ./examples/dist
