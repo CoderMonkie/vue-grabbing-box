@@ -13,10 +13,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: 'master'
+          fetch-depth: 5
 
       - name: Check version change
         run: |
-          if [[ $(git diff HEAD~2..HEAD -- package.json | grep version) ]]; then
+          if [[ $(git diff HEAD~1..HEAD -- package.json | grep version) ]]; then
             echo "Version changed, publishing to NPM..."
             echo "NEED_NPM_PUBLISH=true" >> $GITHUB_ENV
           else
