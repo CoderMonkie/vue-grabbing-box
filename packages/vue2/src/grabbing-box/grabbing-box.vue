@@ -183,7 +183,7 @@ export default {
       Object.entries(bodyEvents).forEach((kv) => {
         const [eventName, handler] = kv;
         // 注意：这里拦截阻止默认行为的不能加节流，且 passive 为 false
-        this.bindEvent(document.body, eventName, handler, {
+        this.bindEvent(document, eventName, handler, {
           passive: false,
           capture: false,
         });
@@ -195,6 +195,7 @@ export default {
         const _handler = throttle(handler, this.throttleSpan);
         this.bindEvent(this.$refs.containerRef, eventName, _handler, {
           capture: this.useCapture,
+          passive: false,
         });
       });
     },
@@ -208,7 +209,12 @@ export default {
      */
     getBodyEvents() {
       return isPC() ? {
-        wheel: this.disableDefaultBehavior,
+        wheel: (event) => {
+          console.log('body wheel event', event);
+          if (event.ctrlKey) {
+            this.disableDefaultBehavior(event);
+          }
+        },
       } : {
         touchmove: this.disableDefaultBehavior,
       }
@@ -336,6 +342,7 @@ export default {
     onWheel(e) {
       const { ctrlKey, wheelDelta } = e;
       e.preventDefault();
+      e.stopPropagation();
       // 缩放
       if (ctrlKey) {
         if (wheelDelta > 0) {

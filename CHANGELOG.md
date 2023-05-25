@@ -19,6 +19,10 @@ release for vue@2.7
 - support i18n  
   (using vue-i18n, for the reset button)
 
+## 0.1.6 (2023.05.25)
+
+- fix: disable ctrlKey + wheel on document, but allow scroll
+
 ## 0.1.5 (2023.05.25)
 
 - fix: scale buttons click with stop propagation
