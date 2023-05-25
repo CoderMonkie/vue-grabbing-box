@@ -3,9 +3,20 @@
     <div
       class="scale-button btn-plus"
       :class="{ 'is-disabled': scaleLimitOverMax }"
-      @click="zoomIn"
+      @click.stop="zoomIn"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="margin-top:3px"><path fill="currentColor" d="M18 12.998h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5v-5a1 1 0 0 1 2 0v5h5a1 1 0 0 1 0 2z"/></svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        style="margin-top: 3px"
+      >
+        <path
+          fill="currentColor"
+          d="M18 12.998h-5v5a1 1 0 0 1-2 0v-5H6a1 1 0 0 1 0-2h5v-5a1 1 0 0 1 2 0v5h5a1 1 0 0 1 0 2z"
+        />
+      </svg>
       <!-- <Icon icon="ic:round-plus" :size="20" style="margin-top: 3px" /> -->
     </div>
 
@@ -14,13 +25,24 @@
     <div
       class="scale-button btn-minus"
       :class="{ 'is-disabled': scaleLimitBelowMin }"
-      @click="zoomOut"
+      @click.stop="zoomOut"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="margin-top:3px"><path fill="currentColor" d="M18 12.998H6a1 1 0 0 1 0-2h12a1 1 0 0 1 0 2z"/></svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        style="margin-top: 3px"
+      >
+        <path
+          fill="currentColor"
+          d="M18 12.998H6a1 1 0 0 1 0-2h12a1 1 0 0 1 0 2z"
+        />
+      </svg>
       <!-- <Icon icon="ic:round-minus" :size="20" style="margin-top: 3px" /> -->
     </div>
 
-    <div class="scale-button btn-reset" @click="reset">重置</div>
+    <div class="scale-button btn-reset" @click.stop="reset">重置</div>
   </div>
 </template>
 
