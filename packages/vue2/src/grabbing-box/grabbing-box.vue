@@ -92,6 +92,9 @@ export default {
       type: Number,
       default: 50,
     },
+    /**
+     * @deprecated
+     */
     scrollSpeed: {
       type: Number,
       default: SCROLL_SPEED_DEFAULT,
@@ -359,10 +362,15 @@ export default {
           this.zoomOut();
         }
       }
-      // 滚动（仅上下）
+      // 滚动（上下左右都可）
       else {
-        const { translateY } = this.lastTransformData;
-        this.lastTransformData.translateY += wheelDelta * this.safeScrollSpeed;
+        const { deltaMode, wheelDeltaX, wheelDeltaY } = e;
+
+        // 0=像素
+        if (deltaMode === 0) {
+          this.lastTransformData.translateX += wheelDeltaX;
+          this.lastTransformData.translateY += wheelDeltaY;
+        }
         this.setMatrix(this.$refs.contentBoxRef);
       }
     },
