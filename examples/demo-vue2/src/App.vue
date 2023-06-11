@@ -13,6 +13,11 @@
       :throttleSpan="50"
       :emitClickOnDrag="formData.emitClickOnDrag"
       style="border: 1px solid gray"
+      @update="onUpdate"
+      @zoom-in="onZoomIn"
+      @zoom-out="onZoomOut"
+      @move="onMove"
+      @reset="onReset"
     >
       <img alt="Vue logo" src="./assets/logo.png" />
       <HelloWorld msg="Welcome to Your Vue.js App" />
@@ -143,6 +148,24 @@ export default {
         message: "Click event triggered on the upper-level of the grabbing box.",
         type: "warning",
       });
+    },
+    /**
+     * 事件系统
+     */
+    onUpdate(e) {
+      console.log('onUpdate', e);
+    },
+    onZoomIn(e) {
+      console.log('onZoomIn', e);
+    },
+    onZoomOut(e) {
+      console.log('onZoomOut', e);
+    },
+    onMove(e) {
+      console.log('onMove', e);
+    },
+    onReset(e) {
+      console.log('onReset', e);
     },
   },
 };
