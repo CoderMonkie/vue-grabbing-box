@@ -73,6 +73,8 @@ Vue.component(GrabbingBox.name, GrabbingBox);
 
 ## API
 
+### Attributes
+
 |Property|Type|Default Value|Note|
 |--|--|--|--|
 |maxScale|Number|200|max limitation, unit percent|
@@ -83,5 +85,15 @@ Vue.component(GrabbingBox.name, GrabbingBox);
 |scaleButtonsSpaceX|String|`10px`|`v0.1.1` specify the horizontal space to edge|
 |scaleButtonsSpaceY|String|`20px`|`v0.1.1` specify the vertical space to edge|
 |throttleSpan|Number|~~100~~ 50(from `v0.1.3`)|unit millisecond|
-|scrollSpeed|Number|~~3~~ 1(from `v0.1.3`)|`v0.0.6` mouse scroll speed，value range `1`~`6`|
+|~~scrollSpeed~~|Number|~~3~~ 1(from `v0.1.3`)|**deprecated from v0.1.7** `v0.0.6` mouse scroll speed，value range `1`~`6`|
 |emitClickOnDrag|Boolean|false|`v0.1.4` emit click event even if have dragged (just in case of special usage case, usually could ignore this prop [#7 no-emit-click](https://github.com/CoderMonkie/vue-grabbing-box/issues/7))|
+
+### Events（from v0.1.7）
+
+|Event Name|Description|Params|
+|--|--|--|
+|update|on view change|{ scale, translateX, translateY }|
+|zoom-in|on zoom in|{ scale, translateX, translateY }|
+|zoom-out|on zoom out|{ scale, translateX, translateY }|
+|move|on drag the cavas, or mouse scroll, or touch pad scroll|{ scale, translateX, translateY }|
+|reset|on reset the view|-|

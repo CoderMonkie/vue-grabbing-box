@@ -16,8 +16,16 @@ release for vue@2.7
 
 ### Features
 
-- support i18n  
-  (using vue-i18n, for the reset button)
+- support locale options 
+  (for the text on reset button)
+
+## 0.1.7 (2023.06.11)
+
+- [feature: emit events on interaction](https://github.com/CoderMonkie/vue-grabbing-box/issues/23)
+
+- [feature: support horizontal scroll](https://github.com/CoderMonkie/vue-grabbing-box/issues/24)
+
+- other improvement
 
 ## 0.1.6 (2023.05.25)
 

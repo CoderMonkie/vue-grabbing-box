@@ -92,6 +92,9 @@ export default {
       type: Number,
       default: 50,
     },
+    /**
+     * @deprecated
+     */
     scrollSpeed: {
       type: Number,
       default: SCROLL_SPEED_DEFAULT,
@@ -190,9 +193,11 @@ export default {
       });
 
       const containerEvents = this.getContainerEvents();
+      const bodyEventNames = Object.keys(bodyEvents);
       Object.entries(containerEvents).forEach((kv) => {
         const [eventName, handler] = kv;
-        const _handler = throttle(handler, this.throttleSpan);
+        // 注意：如果使用节流函数，应避免间隔时间内被透传事件到顶层，使上面的屏蔽失效
+        const _handler = bodyEventNames.includes(eventName) ? handler : throttle(handler, this.throttleSpan);
         this.bindEvent(this.$refs.containerRef, eventName, _handler, {
           capture: this.useCapture,
           passive: false,
@@ -248,6 +253,7 @@ export default {
         translateY: 0,
       };
       this.setMatrix(this.$refs.contentBoxRef);
+      this.$emit('reset');
     },
     zoomIn() {
       const { scale } = this.lastTransformData;
@@ -255,6 +261,7 @@ export default {
       console.log('zoomIn', scale, newScale);
       this.lastTransformData.scale = Math.min(newScale, this.maxScale / 100);
       this.setMatrix(this.$refs.contentBoxRef);
+      this.$emit('zoom-in', this.lastTransformData);
     },
     zoomOut() {
       const { scale } = this.lastTransformData;
@@ -262,6 +269,7 @@ export default {
       console.log('zoomOut', scale, newScale);
       this.lastTransformData.scale = Math.max(newScale, this.minScale / 100);
       this.setMatrix(this.$refs.contentBoxRef);
+      this.$emit('zoom-out', this.lastTransformData);
     },
     bindEvent(element, eventName, handler, options) {
       element.addEventListener(eventName, handler, options);
@@ -279,12 +287,15 @@ export default {
         translateY: y,
       }
       this.setMatrix(element);
+      this.$emit('move', this.lastTransformData);
     },
     setMatrix(element) {
       const { scale, translateX, translateY } = this.lastTransformData;
       const safeScale = this.ensureScaleInRange(scale);
       element.style.transform = `matrix(${safeScale}, 0, 0, ${safeScale}, ${translateX}, ${translateY})`;
       this.lastTransformData.scale = safeScale;
+
+      this.$emit('update', this.lastTransformData);
     },
     /**
      * -------------------
@@ -351,10 +362,15 @@ export default {
           this.zoomOut();
         }
       }
-      // 滚动（仅上下）
+      // 滚动（上下左右都可）
       else {
-        const { translateY } = this.lastTransformData;
-        this.lastTransformData.translateY += wheelDelta * this.safeScrollSpeed;
+        const { deltaMode, wheelDeltaX, wheelDeltaY } = e;
+
+        // 0=像素
+        if (deltaMode === 0) {
+          this.lastTransformData.translateX += wheelDeltaX;
+          this.lastTransformData.translateY += wheelDeltaY;
+        }
         this.setMatrix(this.$refs.contentBoxRef);
       }
     },
