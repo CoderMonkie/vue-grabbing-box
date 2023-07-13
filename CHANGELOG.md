@@ -19,6 +19,12 @@ release for vue@2.7
 - support locale options 
   (for the text on reset button)
 
+## 0.1.8 (2023.07.13)
+
+- fix: position of zoom button icons are not right (in EIS project)
+- fix: [current scale calculation](https://github.com/CoderMonkie/vue-grabbing-box/issues/5)
+- fix: register locally
+
 ## 0.1.7 (2023.06.11)
 
 - [feature: emit events on interaction](https://github.com/CoderMonkie/vue-grabbing-box/issues/23)
