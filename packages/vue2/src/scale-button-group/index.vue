@@ -1,7 +1,7 @@
 <template>
   <div class="scale-btn-group flex items-center">
     <div
-      class="scale-button btn-plus"
+      class="scale-button btn-plus flex justify-center items-center"
       :class="{ 'is-disabled': scaleLimitOverMax }"
       @click.stop="zoomIn"
     >
@@ -10,7 +10,6 @@
         width="20"
         height="20"
         viewBox="0 0 24 24"
-        style="margin-top: 3px"
       >
         <path
           fill="currentColor"
@@ -23,7 +22,7 @@
     <div style="display: inline-block; margin: 0 8px">{{ scaling }}%</div>
 
     <div
-      class="scale-button btn-minus"
+      class="scale-button btn-minus flex justify-center items-center"
       :class="{ 'is-disabled': scaleLimitBelowMin }"
       @click.stop="zoomOut"
     >
@@ -32,7 +31,6 @@
         width="20"
         height="20"
         viewBox="0 0 24 24"
-        style="margin-top: 3px"
       >
         <path
           fill="currentColor"
@@ -101,7 +99,6 @@ export default {
 }
 
 .scale-button {
-  display: inline-block;
   height: 28px;
   text-align: center;
   color: #606266;
