@@ -8,12 +8,12 @@
 
 This is a container component (Vue component) similar to a canvas box, which displays your content (whether it is an image or any Vue component), and supports features such as:
 
-- Mobile end
+- Mobile
   - Single finger canvas drag and drop
   - Double finger scaling (zoom-in zoom-out)
   - You can also expand, shrink, and reset by clicking the button
 
-- PC end
+- PC
   - Click and hold to drag
   - Scroll wheel up and down to drag up and down
   - Scale by 'Ctrl'+'Wheel'
@@ -53,7 +53,7 @@ import 'vue-grabbing-box/dist/vue2/index.css'; // from v0.1.0 need to import css
 Vue.use(GrabbingBox);
 
 // or import component directly
-import GrabbingBox from 'vue-grabbing-box/packages/vue2/src/grabbing-box';
+import { GrabbingBox } from 'vue-grabbing-box/dist/vue2';
 import 'vue-grabbing-box/dist/vue2/index.css';
 Vue.use(GrabbingBox);
 // or
