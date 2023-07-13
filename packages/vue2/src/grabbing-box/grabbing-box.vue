@@ -135,7 +135,8 @@ export default {
     scaling() {
       const { scale } = this.lastTransformData;
       // 要注意：1.1 * 100 = 110.00000000000001
-      return parseInt(scale * 100);
+      // 1.15*100=114.99999999999999
+      return parseInt(scale * 10000 / 100);
     },
     safeScrollSpeed() {
       if (isNaN(this.scrollSpeed)) return SCROLL_SPEED_DEFAULT;
