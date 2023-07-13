@@ -108,11 +108,15 @@
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+// register locally
+import { GrabbingBox } from "../../../dist/vue2";
+import '../../../dist/vue2/index.css'
 
 export default {
   name: "App",
   components: {
     HelloWorld,
+    GrabbingBox,
   },
   data() {
     return {
@@ -145,7 +149,8 @@ export default {
   methods: {
     onClick() {
       this.$message({
-        message: "Click event triggered on the upper-level of the grabbing box.",
+        message:
+          "Click event triggered on the upper-level of the grabbing box.",
         type: "warning",
       });
     },
@@ -153,19 +158,19 @@ export default {
      * 事件系统
      */
     onUpdate(e) {
-      console.log('onUpdate', e);
+      console.log("onUpdate", e);
     },
     onZoomIn(e) {
-      console.log('onZoomIn', e);
+      console.log("onZoomIn", e);
     },
     onZoomOut(e) {
-      console.log('onZoomOut', e);
+      console.log("onZoomOut", e);
     },
     onMove(e) {
-      console.log('onMove', e);
+      console.log("onMove", e);
     },
     onReset(e) {
-      console.log('onReset', e);
+      console.log("onReset", e);
     },
   },
 };
