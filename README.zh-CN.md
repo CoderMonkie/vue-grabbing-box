@@ -23,7 +23,9 @@
 直观上图：
 ![](docs/images/vue2-demo-captture.gif)
 
-试一下：[demo-vue2](https://codermonkie.github.io/vue-grabbing-box/demo-vue2/)
+试一下：  
+[demo-vue2](https://codermonkie.github.io/vue-grabbing-box/demo-vue2/)
+[demo-vue3](https://codermonkie.github.io/vue-grabbing-box/demo-vue3/)
 
 ## 更新记录
 
@@ -47,7 +49,7 @@ yarn add vue-grabbing-box
 import Vue from 'vue';
 import GrabbingBox from 'vue-grabbing-box'; // 直接引入默认 vue2
 // 或
-import GrabbingBox from 'vue-grabbing-box/dist/vue2`; // 指定 vue2（推荐）
+import GrabbingBox from 'vue-grabbing-box/dist/vue2'; // 指定 vue2（推荐）
 // v0.1.0起，不再将css一并打包进js文件，需要单独引入样式
 import 'vue-grabbing-box/dist/vue2/index.css';
 
@@ -75,7 +77,16 @@ v0.1.0起不再依赖 ElementUI 的 ElButton 组件
 
 ### Vue@3
 
-TODO
+```js
+
+import { createApp } from 'vue';
+import GrabbingBox from 'vue-grabbing-box/dist/vue3';
+// 或
+import { GrabbingBox } from 'vue-grabbing-box/dist/vue3';
+import 'vue-grabbing-box/dist/vue3/index.css';
+
+Vue.use(GrabbingBox);
+```
 
 ## API
 
@@ -104,3 +115,13 @@ TODO
 |zoom-out|缩小显示效果的时候触发|{ scale, translateX, translateY }|
 |move|改变横向或竖向位置的时候触发，也就是拖拽或者滚动轮滚动或者触摸板滚动|Object|
 |reset|重置时触发|-|
+
+## 开发
+
+```sh
+# 启动 demo 项目进行开发
+pnpm dev
+
+# 也可以进入 excamples 下的 vue2、vue3 项目单个启动
+# 注意项目中对 GrabbingBox 的引入，是本地原文件或者编译后文件，还是线上 NPM 包
+```

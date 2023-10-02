@@ -8,7 +8,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build --mode developmennt"
+    "build": "vite build",
+    "build:dev": "vite build --mode developmennt"
   },
   "keywords": [
     "vue-grabbing-box vue3"

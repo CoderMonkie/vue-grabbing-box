@@ -11,7 +11,7 @@
   "main": "./dist/vue2/index.umd.js",
   "module": "./dist/vue2/index.js",
   "scripts": {
-    "dev": "echo TODO",
+    "dev": "pnpm -F '@vue-grabbing-box/vue*' build:dev && pnpm -F '@vue-grabbing-box/demo-*' dev",
     "build": "pnpm -F '@vue-grabbing-box/vue*' build",
     "build:publish": "pnpm build && pnpm publish",
     "build:demo": "pnpm -F '@vue-grabbing-box/demo-*' build",

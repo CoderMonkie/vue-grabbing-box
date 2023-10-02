@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -7,4 +7,5 @@ export default defineConfig({
   build: {
     outDir: '../dist/demo-vue3',
   },
-})
+  base: '/vue-grabbing-box/demo-vue3'
+});
