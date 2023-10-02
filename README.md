@@ -86,7 +86,9 @@ import GrabbingBox from 'vue-grabbing-box/dist/vue3';
 import { GrabbingBox } from 'vue-grabbing-box/dist/vue3';
 import 'vue-grabbing-box/dist/vue3/index.css';
 
-Vue.use(GrabbingBox);
+const app = createApp();
+app.use(GrabbingBox);
+app.mount('#app');
 ```
 
 ## API
