@@ -1,6 +1,6 @@
 # vue-grabbing-box changelog
 
-## 1.0.0 TODO
+## 1.0.0-alpha.1 (2023.10.02)
 
 release for vue@3
 

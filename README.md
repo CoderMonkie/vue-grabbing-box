@@ -4,6 +4,8 @@
 
 ---
 
+> vue3 support from `^1.0.0`
+
 ## Introdution
 
 This is a container component (Vue component) similar to a canvas box, which displays your content (whether it is an image or any Vue component), and supports features such as:
@@ -19,7 +21,12 @@ This is a container component (Vue component) similar to a canvas box, which dis
   - Scale by 'Ctrl'+'Wheel'
   - You can also zoom-in, zoom-out, and reset by clicking the button
 
-Try it out: [demo-vue2](https://codermonkie.github.io/vue-grabbing-box/demo-vue2/)
+Try it out:
+
+[demo-vue2](https://codermonkie.github.io/vue-grabbing-box/demo-vue2/)
+
+[demo-vue3](https://codermonkie.github.io/vue-grabbing-box/demo-vue3/)
+
 
 ![](docs/images/vue2-demo-captture.gif)
 
@@ -47,7 +54,7 @@ yarn add vue-grabbing-box
 import Vue from 'vue';
 import GrabbingBox from 'vue-grabbing-box'; // import as vue2 for default
 // or
-import GrabbingBox from 'vue-grabbing-box/dist/vue2`; // specify vue2
+import GrabbingBox from 'vue-grabbing-box/dist/vue2'; // specify vue2
 // recommend, in case of changing default export to vue3
 import 'vue-grabbing-box/dist/vue2/index.css'; // from v0.1.0 need to import css file
 Vue.use(GrabbingBox);
@@ -70,6 +77,19 @@ Vue.component(GrabbingBox.name, GrabbingBox);
 
 ~~*Note: used ElButton in scale button-group*~~  
 (No more using ElButton from v0.1.0)
+
+### Vue@3
+
+```js
+
+import { createApp } from 'vue';
+import GrabbingBox from 'vue-grabbing-box/dist/vue3';
+// or
+import { GrabbingBox } from 'vue-grabbing-box/dist/vue3';
+import 'vue-grabbing-box/dist/vue3/index.css';
+
+Vue.use(GrabbingBox);
+```
 
 ## API
 
@@ -97,3 +117,13 @@ Vue.component(GrabbingBox.name, GrabbingBox);
 |zoom-out|on zoom out|{ scale, translateX, translateY }|
 |move|on drag the cavas, or mouse scroll, or touch pad scroll|{ scale, translateX, translateY }|
 |reset|on reset the view|-|
+
+## Develop
+
+```sh
+# start demo projects(vue2 & vue3)
+pnpm dev
+
+# or start demo projects under 'expamples' folder separately
+# Note that the GrabbingBox used is from NPM or local files(source files or build result)
+```
