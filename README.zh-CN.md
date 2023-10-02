@@ -24,7 +24,7 @@
 ![](docs/images/vue2-demo-captture.gif)
 
 试一下：  
-[demo-vue2](https://codermonkie.github.io/vue-grabbing-box/demo-vue2/)
+[demo-vue2](https://codermonkie.github.io/vue-grabbing-box/demo-vue2/)  
 [demo-vue3](https://codermonkie.github.io/vue-grabbing-box/demo-vue3/)
 
 ## 更新记录

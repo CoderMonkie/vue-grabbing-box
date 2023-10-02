@@ -5,7 +5,8 @@
   "files": [
     "dist",
     "./packages/utils",
-    "./packages/vue2/src",
+    "./packages/vue2",
+    "./packages/vue3",
     "README**.md"
   ],
   "main": "./dist/vue2/index.umd.js",
