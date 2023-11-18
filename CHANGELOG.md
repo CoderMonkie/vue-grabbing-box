@@ -1,5 +1,9 @@
 # vue-grabbing-box changelog
 
+## 1.0.0-alpha.2 (2023.11.18)
+
+- fix: unbind touchmove on document
+
 ## 1.0.0-alpha.1 (2023.10.02)
 
 release for vue@3

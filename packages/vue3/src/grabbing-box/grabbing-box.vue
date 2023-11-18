@@ -516,7 +516,7 @@ onBeforeUnmount(() => {
   });
   Object.entries(getBodyEvents()).forEach((kv) => {
     const [eventName, handler] = kv;
-    unbindEvent(document.body, eventName, handler);
+    unbindEvent(document, eventName, handler);
   });
 });
 </script>

@@ -125,7 +125,7 @@ export default {
     });
     Object.entries(this.getBodyEvents()).forEach((kv) => {
       const [eventName, handler] = kv;
-      this.unbindEvent(document.body, eventName, handler);
+      this.unbindEvent(document, eventName, handler);
     });
   },
   computed: {
