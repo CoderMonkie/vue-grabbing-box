@@ -33,7 +33,10 @@
     "画布缩放",
     "多指缩放"
   ],
-  "author": "maoniaiyou",
+  "author": {
+    "name": "maonianyou",
+    "email": "maonianyou@foxmail.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/CoderMonkie/vue-grabbing-box.git"
