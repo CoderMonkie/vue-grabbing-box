@@ -64,6 +64,11 @@ export default {
       type: Number,
       default: 20,
     },
+    // 初始化为指定比例
+    initScale: {
+      type: Number,
+      default: 100,
+    },
     // 是否显示缩放按钮组
     scaleButtons: {
       type: Boolean,
@@ -182,7 +187,25 @@ export default {
     };
   },
   methods: {
+    /** 初始化为指定比例 */
+    useInitSacle() {
+      if (this.maxScale < this.minScale) {
+        throw new Error(`[Props Error]maxScale should greater than minSacle`);
+      }
+      let initScale = this.initScale;
+      if (initScale > this.maxScale) {
+        initScale = this.maxScale;
+      } else if (initScale < this.minScale) {
+        initScale = this.minScale;
+      }
+      this.lastTransformData.scale = this.ensureScaleInRange(
+        initScale / 100,
+      );
+      this.setMatrix(this.$refs.contentBoxRef);
+    },
     init() {
+      this.useInitSacle();
+
       const bodyEvents = this.getBodyEvents();
       Object.entries(bodyEvents).forEach((kv) => {
         const [eventName, handler] = kv;
