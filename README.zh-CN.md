@@ -99,6 +99,7 @@ app.mount('#app');
 |maxScale|Number|200|放大最高比例限制，单位百分比|
 |minScale|Number|20|缩小的最小比例限制，单位百分比|
 |scaleStep|Number|10|放大缩小的步长，点击按钮时用，单位同上|
+|initScale|Number|100|初始化时的显示比例，v1.0.0-alpha.4~|
 |scaleButtons|Boolean|true|是否显示 scale 按钮组，包括放大（+）缩小（-）和重置|
 |scaleButtonsPosition|String|`top right`|`v0.1.1` 指定缩放按钮组的位置, `top \| right \| bottom \| left`|
 |scaleButtonsSpaceX|String|`10px`|`v0.1.1` 指定与边的横向距离|

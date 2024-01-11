@@ -100,6 +100,7 @@ app.mount('#app');
 |maxScale|Number|200|max limitation, unit percent|
 |minScale|Number|20|min limitation, unit percent|
 |scaleStep|Number|10|unit percent|
+|initScale|Number|100|unit percent, v1.0.0-alpha.4~|
 |scaleButtons|Boolean|true|whether show scale button-group，includes `+` `-` and `reset`|
 |scaleButtonsPosition|String|`top right`|`v0.1.1` specify the position of scale button-group, `top \| right \| bottom \| left`|
 |scaleButtonsSpaceX|String|`10px`|`v0.1.1` specify the horizontal space to edge|
