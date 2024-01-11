@@ -67,6 +67,11 @@ const props = defineProps({
     type: Number,
     default: 20,
   },
+  // 初始化为指定比例
+  initScale: {
+    type: Number,
+    default: 100,
+  },
   // 是否显示缩放按钮组
   scaleButtons: {
     type: Boolean,
@@ -154,7 +159,25 @@ const safeScaleButtonsPosition = computed(() => {
   };
 });
 
+/** 初始化为指定比例 */
+const useInitSacle = () => {
+  if (props.maxScale < props.minScale) {
+    throw new Error(`[Props Error]maxScale should greater than minSacle`);
+  }
+  let initScale = props.initScale;
+  if (initScale > props.maxScale) {
+    initScale = props.maxScale;
+  } else if (initScale < props.minScale) {
+    initScale = props.minScale;
+  }
+  state.lastTransformData.scale = ensureScaleInRange(
+    initScale / 100,
+  );
+  setMatrix(contentBoxRef.value);
+};
+
 const init = () => {
+  useInitSacle();
   const bodyEvents = getBodyEvents();
   Object.entries(bodyEvents).forEach((kv) => {
     const [eventName, handler] = kv;
