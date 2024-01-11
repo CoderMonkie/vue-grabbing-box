@@ -53,6 +53,7 @@ const onReset = (e) => {
       :maxScale="formData.maxScale"
       :minScale="formData.minScale"
       :scaleStep="formData.scaleStep"
+      :init-scale="60"
       :scaleButtons="formData.scaleButtons"
       :scaleButtonsPosition="scaleButtonsPosition"
       :scaleButtonsSpaceX="formData.scaleButtonsSpaceX + 'px'"

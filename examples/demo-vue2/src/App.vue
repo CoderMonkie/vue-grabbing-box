@@ -6,6 +6,7 @@
       :minScale="formData.minScale"
       :scaleStep="formData.scaleStep"
       :scaleButtons="formData.scaleButtons"
+      :init-scale="60"
       :scaleButtonsPosition="scaleButtonsPosition"
       :scaleButtonsSpaceX="formData.scaleButtonsSpaceX + 'px'"
       :scaleButtonsSpaceY="formData.scaleButtonsSpaceY + 'px'"
