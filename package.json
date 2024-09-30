@@ -47,7 +47,8 @@
     "vite": "^4.3.1"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "vue": "2.6.14"
