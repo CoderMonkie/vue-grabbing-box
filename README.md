@@ -79,16 +79,16 @@ Vue.component(GrabbingBox.name, GrabbingBox);
 ### Vue@3
 
 ```js
-
+// for global
 import { createApp } from 'vue';
 import GrabbingBox from 'vue-grabbing-box/dist/vue3';
-// or
-import { GrabbingBox } from 'vue-grabbing-box/dist/vue3';
 import 'vue-grabbing-box/dist/vue3/index.css';
-
 const app = createApp();
 app.use(GrabbingBox);
 app.mount('#app');
+
+// or in setup script of vue3 component
+import { GrabbingBox } from 'vue-grabbing-box/dist/vue3';
 ```
 
 ## API

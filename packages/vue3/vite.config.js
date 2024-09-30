@@ -29,7 +29,7 @@ export default defineConfig(({ command, mode }) => {
       lib: {
         entry: path.resolve(__dirname, 'index.js'),
         name: 'GrabbingBox',
-        fileName: 'grabbing-box',
+        fileName: (format) => `index${format === 'es' ? '' : '.' + format}.js`,
       },
       outDir: '../../dist/vue3',
       cssCodeSplit: true,

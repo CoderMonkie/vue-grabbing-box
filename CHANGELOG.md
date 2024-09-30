@@ -1,5 +1,9 @@
 # vue-grabbing-box changelog
 
+## 1.0.0 (2024.09.30)
+
+- fix: import for vue3
+
 ## 1.0.0-alpha.4 (2024.01.11)
 
 - feature 增加配置项`initScale`(Vue3版)

@@ -1,13 +1,12 @@
 {
   "name": "vue-grabbing-box",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0",
   "description": "vue-grabbing-box is a container component that allows you to grab to change view-box and also with scaling",
   "files": [
     "dist",
-    "./packages/utils",
-    "./packages/vue2",
-    "./packages/vue3",
-    "README**.md"
+    "README**.md",
+    "dist/vue2",
+    "dist/vue3"
   ],
   "main": "./dist/vue2/index.umd.js",
   "module": "./dist/vue2/index.js",
