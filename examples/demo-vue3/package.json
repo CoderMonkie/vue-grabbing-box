@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "element-plus": "^2.3.14",
-    "vue": "^3.2.47"
+    "vue": "^3.2.47",
+    "vue-grabbing-box": "^1.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",

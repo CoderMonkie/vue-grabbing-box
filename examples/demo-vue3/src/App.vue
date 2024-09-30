@@ -3,6 +3,9 @@
 // import { GrabbingBox } from "../../../dist/vue3/grabbing-box";
 // import "../../../dist/vue3/index.css";
 
+// import { GrabbingBox } from 'vue-grabbing-box/dist/vue3';
+// import 'vue-grabbing-box/dist/vue3/index.css';
+
 import HelloWorld from "./components/HelloWorld.vue";
 import { reactive, computed } from "vue";
 import { ElMessage } from 'element-plus'

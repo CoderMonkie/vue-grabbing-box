@@ -110,8 +110,9 @@
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 // register locally
-import { GrabbingBox } from "../../../dist/vue2";
-import '../../../dist/vue2/index.css'
+// import { GrabbingBox } from "vue-grabbing-box";
+import { GrabbingBox } from "vue-grabbing-box/dist/vue2";
+import 'vue-grabbing-box/dist/vue2/index.css'
 
 export default {
   name: "App",

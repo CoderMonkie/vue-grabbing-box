@@ -10,6 +10,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 // import '../../../dist/vue2/index.css'
 // -- using package from NPM
 // import GrabbingBox from 'vue-grabbing-box'
+// import GrabbingBox from 'vue-grabbing-box/dist/vue2'
 // import 'vue-grabbing-box/dist/vue2/index.css'
 
 Vue.use(ElementUI)
