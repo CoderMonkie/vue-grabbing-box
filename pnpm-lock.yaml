@@ -20,11 +20,13 @@ importers:
       core-js: ^3.8.3
       element-ui: ^2.15.13
       vue: ^2.6.14
+      vue-grabbing-box: ^1.0.0
       vue-template-compiler: ^2.6.14
     dependencies:
       core-js: 3.30.2
       element-ui: 2.15.13_vue@2.6.14
       vue: 2.6.14
+      vue-grabbing-box: link:../..
     devDependencies:
       '@vue/cli-plugin-babel': 5.0.8_kdpya376pd4ceqci3huwwuvsea
       '@vue/cli-service': 5.0.8_sbs6or2oam5i4s4vmfp4rzwdnq
@@ -36,9 +38,11 @@ importers:
       element-plus: ^2.3.14
       vite: ^4.3.2
       vue: ^3.2.47
+      vue-grabbing-box: ^1.0.0
     dependencies:
       element-plus: 2.3.14_vue@3.2.47
       vue: 3.2.47
+      vue-grabbing-box: link:../..
     devDependencies:
       '@vitejs/plugin-vue': 4.2.0_vite@4.3.8+vue@3.2.47
       vite: 4.3.8
@@ -2242,7 +2246,7 @@ packages:
       '@vue/cli-plugin-vuex': 5.0.8_@vue+cli-service@5.0.8
       '@vue/cli-shared-utils': 5.0.8
       '@vue/component-compiler-utils': 3.3.0
-      '@vue/vue-loader-v15': /vue-loader/15.10.1_24t5khkflwnyyugnzw3icymgsm
+      '@vue/vue-loader-v15': /vue-loader/15.11.1_24t5khkflwnyyugnzw3icymgsm
       '@vue/web-component-wrapper': 1.3.0
       acorn: 8.8.2
       acorn-walk: 8.2.0
@@ -2329,6 +2333,7 @@ packages:
       - mustache
       - nunjucks
       - plates
+      - prettier
       - pug
       - qejs
       - ractive
@@ -7039,18 +7044,21 @@ packages:
     resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==}
     dev: true
 
-  /vue-loader/15.10.1_24t5khkflwnyyugnzw3icymgsm:
-    resolution: {integrity: sha512-SaPHK1A01VrNthlix6h1hq4uJu7S/z0kdLUb6klubo738NeQoLbS6V9/d8Pv19tU0XdQKju3D1HSKuI8wJ5wMA==}
+  /vue-loader/15.11.1_24t5khkflwnyyugnzw3icymgsm:
+    resolution: {integrity: sha512-0iw4VchYLePqJfJu9s62ACWUXeSqM30SQqlIftbYWM3C+jpPcEHKSPUZBLjSF9au4HTHQ/naF6OGnO3Q/qGR3Q==}
     peerDependencies:
       '@vue/compiler-sfc': ^3.0.8
       cache-loader: '*'
       css-loader: '*'
+      prettier: '*'
       vue-template-compiler: '*'
       webpack: ^3.0.0 || ^4.1.0 || ^5.0.0-0
     peerDependenciesMeta:
       '@vue/compiler-sfc':
         optional: true
       cache-loader:
+        optional: true
+      prettier:
         optional: true
       vue-template-compiler:
         optional: true
